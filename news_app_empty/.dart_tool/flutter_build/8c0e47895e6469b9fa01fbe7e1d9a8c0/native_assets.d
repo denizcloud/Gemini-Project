@@ -1,0 +1,1 @@
+ /Volumes/T7/News_App/news_app_empty/.dart_tool/flutter_build/8c0e47895e6469b9fa01fbe7e1d9a8c0/native_assets.yaml: 

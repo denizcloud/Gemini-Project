@@ -1,0 +1,1 @@
+ /Volumes/T7/Git/Gemini-Project/news_app_empty/.dart_tool/flutter_build/2506615ead8f5e40b4f53ebb5c6181ab/native_assets.yaml: 
