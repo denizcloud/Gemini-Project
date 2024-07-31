@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'features/home/home.dart';
+import 'package:news_app_empty/features/home/home.dart';
+import '/config/app_theme.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,8 +11,14 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Home(),
+    return MaterialApp(
+      title: "News App Demo",
+      theme: AppTheme.darkTheme,
+      home: const Banner(
+        message: 'hey',
+        location: BannerLocation.topEnd,
+        child: Home(),
+    ),
     );
   }
 }
