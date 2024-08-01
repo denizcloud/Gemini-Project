@@ -1,8 +1,16 @@
 part of 'saved_news_bloc.dart';
 
-sealed class SavedNewsEvent extends Equatable {
-  const SavedNewsEvent();
+@immutable
+abstract class SavedNewsEvent {}
 
-  @override
-  List<Object> get props => [];
+class SNInitialEvent extends SavedNewsEvent{
+  
+}
+
+
+class SNRemoveFromSNEvent extends SavedNewsEvent {
+  final NewsDataModel newsDataModel;
+  SNRemoveFromSNEvent({
+    required this.newsDataModel,
+  });
 }

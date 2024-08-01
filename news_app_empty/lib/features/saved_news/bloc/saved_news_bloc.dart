@@ -1,13 +1,28 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:meta/meta.dart';
+import 'package:news_app_empty/news_button_model/news_button_model.dart';
+import 'dart:async';
+import 'package:news_app_empty/data/news_item.dart';
 
 part 'saved_news_event.dart';
 part 'saved_news_state.dart';
 
 class SavedNewsBloc extends Bloc<SavedNewsEvent, SavedNewsState> {
-  SavedNewsBloc() : super(SavedNewsInitial()) {
-    on<SavedNewsEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+  SavedNewsBloc() : super(SNInitial()) {
+    on<SNInitialEvent>(snInitialEvent);
+    on<SNRemoveFromSNEvent>(snRemoveFromsnEvent);
+  }
+
+  FutureOr<void> snInitialEvent(
+      SNInitialEvent event, Emitter<SavedNewsState> emit) {
+    emit(SavedSuccessState(snItems: snItems));
+  }
+
+  FutureOr<void> snRemoveFromsnEvent(
+      SNRemoveFromSNEvent event, Emitter<SavedNewsState> emit) {
+    snItems.remove(event.newsDataModel);
+// emit()
+    emit(SavedSuccessState(snItems: snItems));
   }
 }

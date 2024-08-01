@@ -1,10 +1,15 @@
 part of 'saved_news_bloc.dart';
 
-sealed class SavedNewsState extends Equatable {
-  const SavedNewsState();
-  
-  @override
-  List<Object> get props => [];
-}
+@immutable
+abstract class SavedNewsState {}
 
-final class SavedNewsInitial extends SavedNewsState {}
+abstract class SNActionState extends SavedNewsState {}
+
+class SNInitial extends SavedNewsState {}
+
+class SavedSuccessState extends SavedNewsState {
+  final List<NewsDataModel> snItems;
+  SavedSuccessState({
+    required this.snItems,
+  });
+}
