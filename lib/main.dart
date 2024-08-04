@@ -1,9 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app_empty/features/home/home.dart';
-import 'package:news_app_empty/features/posts/ui/posts_page.dart';
-import 'package:news_app_empty/features/saved_news/sn_UI/saved_news_page.dart';
-import 'package:news_app_empty/features/settings/settings_page.dart';
 import '/config/app_theme.dart';
 
 void main() {
@@ -23,7 +20,7 @@ class MainApp extends StatelessWidget {
       home: const Banner(
         message: 'hey',
         location: BannerLocation.topEnd,
-        child: PostsPage()
+        child: Home()
     ),
     );
   }

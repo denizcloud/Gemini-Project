@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_app_empty/features/home/home.dart';
 import 'package:news_app_empty/features/posts/ui/posts_page.dart';
 import 'package:news_app_empty/features/saved_news/bloc/saved_news_bloc.dart';
 import 'package:news_app_empty/features/saved_news/sn_UI/sn_tile_widget.dart';
@@ -89,7 +90,7 @@ class NavigationDrawer extends StatelessWidget {
           leading: const Icon(Icons.deck),
           title: const Text('Genre'),
           onTap: () => Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => const PostsPage())),
+              MaterialPageRoute(builder: (context) => const Home())),
         ),
         ListTile(
           leading: const Icon(Icons.bookmark),

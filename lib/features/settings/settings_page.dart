@@ -62,7 +62,7 @@ class NavigationDrawer extends StatelessWidget {
           leading: const Icon(Icons.deck),
           title: const Text('Genre'),
           onTap: () => Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => const PostsPage())),
+              MaterialPageRoute(builder: (context) => const Home())),
         ),
         ListTile(
           leading: const Icon(Icons.bookmark),

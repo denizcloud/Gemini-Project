@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
       return Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage("https://cdn.discordapp.com/attachments/1247192970214768684/1268274351715913879/image.png?ex=66adce48&is=66ac7cc8&hm=30970f8a5163fb8e4be2de41593d09b9602429eee05e5ebd2659f89b4be6ba69&"),
+            image: AssetImage('lib/assets/news_background.png'), 
             fit: BoxFit.cover,
           ),
         ),
@@ -56,23 +56,6 @@ class _HomeState extends State<Home> {
             }, icon: const Icon(Icons.menu));
           })
         ),
-          body: ListView.builder(
-            itemBuilder: (_, index)=>
-            Stack(
-              children: [
-                Image.network("https://cdn.discordapp.com/attachments/1137731863482466314/1268886043617398898/newspaper.png?ex=66ae0db7&is=66acbc37&hm=8fbf68ec4f89096c40132836d6f1386abfcac70da55f95e34e248109f5ef64d9&"),
-                Positioned.fill(
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      'sample test $index',
-                      style: TextStyle(color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),
-                    ),
-                  ),
-                )                
-              ],  
-            ),
-          ),
           drawer: const NavigationDrawer(),
         ));
     });
@@ -112,7 +95,7 @@ class NavigationDrawer extends StatelessWidget {
           leading: const Icon(Icons.deck),
           title: const Text('Genre'),
           onTap: () => Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => const PostsPage())),
+              MaterialPageRoute(builder: (context) => const Home())),
         ),
         ListTile(
           leading: const Icon(Icons.bookmark),

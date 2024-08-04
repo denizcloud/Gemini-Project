@@ -29,7 +29,7 @@ class _PostsPageState extends State<PostsPage> {
     return Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage("https://cdn.discordapp.com/attachments/1247192970214768684/1268274351715913879/image.png?ex=66adce48&is=66ac7cc8&hm=30970f8a5163fb8e4be2de41593d09b9602429eee05e5ebd2659f89b4be6ba69&"),
+            image: AssetImage('lib/assets/news_background.png'), 
             fit: BoxFit.cover,
           ),
         ),
@@ -74,30 +74,30 @@ class _PostsPageState extends State<PostsPage> {
                         margin: const EdgeInsets.all(0),
                         child: Stack(
                           children: [
-                            Image.network("https://cdn.discordapp.com/attachments/1137731863482466314/1268886043617398898/newspaper.png?ex=66ae0db7&is=66acbc37&hm=8fbf68ec4f89096c40132836d6f1386abfcac70da55f95e34e248109f5ef64d9&"),
+                            Image.asset('lib/assets/news_paper.png'),
                             Positioned.fill(
                               child: Align(
-                                alignment: Alignment(-0.2, -0.1),
+                                alignment: Alignment(-0.1, -0.4),
                                 child: Container(
 
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Text('  ' +successState.posts[index].q,
-                                      style: TextStyle(color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),),
+                                      //Text('  ' +successState.posts[index].q,
+                                      //style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),),
                                                 Container( 
                                                   child: Text('  Tekir',
                                                 style: TextStyle(color: Color.fromARGB(255, 241, 230, 230), fontSize: 30, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),),
                                                   decoration: BoxDecoration(
                                                   color: Color.fromARGB(255, 148, 14, 14)),
                                                   height:52,
-                                                  width: 720),
-                                      Text('  ' + successState.posts[index].a,
-                                      style: TextStyle(color: Color.fromARGB(255, 0, 51, 170), fontSize: 30, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),)
+                                                  width: 520),
+                                      //Text('  ' + successState.posts[index].a,
+                                      //style: TextStyle(color: Color.fromARGB(255, 0, 51, 170), fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),)
                                     ],
                                   ),
-                                height: 500,
-                                width: 720,
+                                height: 200,
+                                width: 380,
                                 ),
                               ),
                             ),

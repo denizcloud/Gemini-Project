@@ -10,7 +10,7 @@ class PostsRepo {
     List<PostDataUiModel> posts = [];
     try {
       var response = await client
-          .get(Uri.parse('https://zenquotes.io/api/quotes'));
+          .get(Uri.parse(''));
 
       List result = jsonDecode(response.body);
 
@@ -31,25 +31,4 @@ class PostsRepo {
     }
   }
 
-  static Future<bool> addPost() async {
-    var client = http.Client();
-
-    try {
-      var response = await client
-          .post(Uri.parse('https://jsonplaceholder.typicode.com/posts'), body: {
-        "title": "Akshit is a Flutter Teacher",
-        "body": "Akshit makes good Bloc videos",
-        "userId": "34"
-      });
-
-      if (response.statusCode >= 200 && response.statusCode < 300) {
-        return true;
-      } else {
-        return false;
-      }
-    } catch (e) {
-      log(e.toString());
-      return false;
-    }
-  }
 }
