@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static final darkTheme = ThemeData(
-    scaffoldBackgroundColor: Colors.blueGrey.shade900,
+    scaffoldBackgroundColor: Color.fromARGB(255, 45, 43, 43),
     primaryColor: Colors.white,
     shadowColor: Colors.black54,
     iconTheme: const IconThemeData(color: Colors.white),
@@ -11,7 +11,21 @@ class AppTheme {
     ),
     textTheme: const TextTheme(
       bodyLarge: TextStyle(
-        backgroundColor: Colors.black,
+        color: Colors.white,
+      ),
+      bodyMedium: TextStyle(
+        color: Colors.white,
+      ),
+      bodySmall: TextStyle(
+        color: Colors.white,
+      ),
+      headlineLarge: TextStyle(
+        color: Colors.white,
+      ),
+      headlineMedium: TextStyle(
+        color: Colors.white,
+      ),
+      headlineSmall: TextStyle(
         color: Colors.white,
       ),
     ),
@@ -39,7 +53,21 @@ class AppTheme {
     ),
     textTheme: const TextTheme(
       bodyLarge: TextStyle(
-        backgroundColor: Colors.white,
+        color: Colors.black,
+      ),
+      bodyMedium: TextStyle(
+        color: Colors.black,
+      ),
+      bodySmall: TextStyle(
+        color: Colors.black,
+      ),
+      headlineLarge: TextStyle(
+        color: Colors.black,
+      ),
+      headlineMedium: TextStyle(
+        color: Colors.black,
+      ),
+      headlineSmall: TextStyle(
         color: Colors.black,
       ),
     ),

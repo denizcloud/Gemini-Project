@@ -10,7 +10,7 @@ class PostsRepo {
     List<PostDataUiModel> posts = [];
     try {
       var response = await client
-          .get(Uri.parse(''));
+          .get(Uri.parse('https://zenquotes.io/api/quotes'));
 
       List result = jsonDecode(response.body);
 
