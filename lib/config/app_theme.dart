@@ -11,13 +11,13 @@ class AppTheme {
     ),
     textTheme: const TextTheme(
       bodyLarge: TextStyle(
-        color: Colors.white,
+        color: Colors.black,
       ),
       bodyMedium: TextStyle(
-        color: Colors.white,
+        color: Colors.black,
       ),
       bodySmall: TextStyle(
-        color: Colors.white,
+        color: Colors.black,
       ),
       headlineLarge: TextStyle(
         color: Colors.white,

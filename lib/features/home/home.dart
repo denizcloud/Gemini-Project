@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app_empty/features/login/auth_page.dart';
 import 'package:news_app_empty/features/posts/ui/posts_page.dart';
 import 'package:news_app_empty/features/saved_news/sn_UI/saved_news_page.dart';
 import 'package:news_app_empty/features/settings/settings_page.dart';
@@ -60,7 +61,7 @@ class _HomeState extends State<Home> {
             }, icon: const Icon(Icons.menu));
           })
         ),
-          drawer: const PageNavigationDrawer(),
+          drawer: PageNavigationDrawer(),
         ));
     });
   }

@@ -1,28 +1,20 @@
 import 'dart:convert';
 
 class PostDataUiModel {
-  final String q;
-  final String a;
-  final String c;
+  final String title;
   PostDataUiModel({
-    required this.q,
-    required this.a,
-    required this.c,
+    required this.title,
   });
 
   Map<String, dynamic> toMap() {
     return {
-      'q': q,
-      'a': a,
-      'c': c,
+      'title': title,
     };
   }
 
   factory PostDataUiModel.fromMap(Map<String, dynamic> map) {
     return PostDataUiModel(
-      q: map['q']?.toString() ?? '',
-      a: map['a']?.toString() ?? '',
-      c: map['c']?.toString() ?? '',
+      title: map['title']?.toString() ?? '',
     );
   }
 

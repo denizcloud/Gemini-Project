@@ -53,9 +53,9 @@ class _PostsPageState extends State<PostsPage> {
                     }),
                 body: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: const FilterBar(options: {'Sports', 'Tech', 'Whatever user wants'}),
+                    const Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: FilterBar(options: {'Sports', 'Tech', 'Whatever user wants'}),
                     ),
                     Expanded(
                       child: BlocConsumer<PostsBloc, PostsState>(
@@ -65,49 +65,36 @@ class _PostsPageState extends State<PostsPage> {
                         listener: (context, state) {},
                         builder: (context, state) {
                           switch (state.runtimeType) {
-                            case PostsFetchingLoadingState _:
+                            case PostsFetchingLoadingState:
                               return const Center(
                                 child: CircularProgressIndicator(),
                               );
-                            case PostFetchingSuccessfulState _:
+                            case PostFetchingSuccessfulState:
                               final successState = state as PostFetchingSuccessfulState;
 
                               return ListView.builder(
                                   itemCount: successState.posts.length,
                                   itemBuilder: (context, index) {
                                     return Container(
-                                      padding: const EdgeInsets.all(0),
-                                      margin: const EdgeInsets.all(0),
                                       child: Stack(
                                         children: [
-                                          Image.asset('lib/assets/news_paper.png'),
-                                          Positioned.fill(
-                                            child: Align(
-                                              alignment: Alignment(-0.1, -0.4),
-                                              child: Container(
-
-                                                child: Column(
-                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [
-                                                    //Text('  ' +successState.posts[index].q,
-                                                    //style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),),
-                                                              Container( 
-                                                                child: Text('  Tekir',
-                                                              style: TextStyle(color: Color.fromARGB(255, 241, 230, 230), fontSize: 30, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),),
-                                                                decoration: BoxDecoration(
-                                                                color: Color.fromARGB(255, 148, 14, 14)),
-                                                                height:52,
-                                                                width: 520),
-                                                    //Text('  ' + successState.posts[index].a,
-                                                    //style: TextStyle(color: Color.fromARGB(255, 0, 51, 170), fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),)
-                                                  ],
+                                          Image.asset('lib/assets/news_paper.png'), 
+                                          Align(
+                                            alignment: Alignment(-1, 0),
+                                            child: Column(
+                                              children: [
+                                                const SizedBox(height:45),
+                                                
+                                                Padding(
+                                                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                                                  child: Text(successState.posts[index].title,style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),),
                                                 ),
-                                              height: 200,
-                                              width: 380,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
+                                                const SizedBox(height: 15),
+                                                Container(decoration: const BoxDecoration(color: Color.fromARGB(255, 148, 14, 14)),height:52,width: 350, child: Text('Tekir',style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),)),
+                                            
+                                              ],
+                                          ),),
+                                        ]
                                       ),
                                     );
                                   },
