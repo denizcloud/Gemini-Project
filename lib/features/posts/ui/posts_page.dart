@@ -53,9 +53,9 @@ class _PostsPageState extends State<PostsPage> {
                     }),
                 body: Column(
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.all(16.0),
-                      child: FilterBar(options: {'Sports', 'Tech', 'Whatever user wants'}),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: const FilterBar(options: {'Sports', 'Tech', 'Whatever user wants'}),
                     ),
                     Expanded(
                       child: BlocConsumer<PostsBloc, PostsState>(
@@ -83,11 +83,8 @@ class _PostsPageState extends State<PostsPage> {
                                           Image.asset('lib/assets/news_paper.png'),
                                           Positioned.fill(
                                             child: Align(
-                                              alignment: const Alignment(-0.1, -0.4),
-                                              child: SizedBox(
-
-                                                height: 200,
-                                              width: 380,
+                                              alignment: Alignment(-0.1, -0.4),
+                                              child: Container(
 
                                                 child: Column(
                                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,16 +92,18 @@ class _PostsPageState extends State<PostsPage> {
                                                     //Text('  ' +successState.posts[index].q,
                                                     //style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),),
                                                               Container( 
-                                                                decoration: const BoxDecoration(
+                                                                child: Text('  Tekir',
+                                                              style: TextStyle(color: Color.fromARGB(255, 241, 230, 230), fontSize: 30, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),),
+                                                                decoration: BoxDecoration(
                                                                 color: Color.fromARGB(255, 148, 14, 14)),
                                                                 height:52,
-                                                                width: 520, 
-                                                                child: const Text('  Tekir',
-                                                              style: TextStyle(color: Color.fromARGB(255, 241, 230, 230), fontSize: 30, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),)),
+                                                                width: 520),
                                                     //Text('  ' + successState.posts[index].a,
                                                     //style: TextStyle(color: Color.fromARGB(255, 0, 51, 170), fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),)
                                                   ],
                                                 ),
+                                              height: 200,
+                                              width: 380,
                                               ),
                                             ),
                                           ),
@@ -124,4 +123,4 @@ class _PostsPageState extends State<PostsPage> {
               )
     );
   }
-}
+}            

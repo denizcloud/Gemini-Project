@@ -19,9 +19,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-signOut () {
-    FirebaseAuth.instance.signOut();
-  }
 
 
   int _selectedIndex = 0;
@@ -62,16 +59,6 @@ signOut () {
               Scaffold.of(context).openDrawer();
             }, icon: const Icon(Icons.menu));
           })
-        ),
-        body: Center(
-          child: InkWell(
-            onTap: signOut,
-            child: Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(image: AssetImage('lib/assets/news_paper.png'))
-              ),
-            ),
-          ),
         ),
           drawer: const PageNavigationDrawer(),
         ));

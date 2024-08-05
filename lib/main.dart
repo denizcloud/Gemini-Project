@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app_empty/features/home/home.dart';
 import 'package:news_app_empty/features/login/auth_page.dart';
+import 'package:news_app_empty/features/posts/ui/posts_page.dart';
 import '/config/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';

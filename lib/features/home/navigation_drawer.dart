@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:news_app_empty/features/home/home.dart';
-import 'package:news_app_empty/features/login/auth_page.dart';
 import 'package:news_app_empty/features/posts/ui/posts_page.dart';
 import 'package:news_app_empty/features/saved_news/sn_UI/saved_news_page.dart';
 import 'package:news_app_empty/features/settings/settings_page.dart';
@@ -11,7 +10,7 @@ class PageNavigationDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Drawer(
-          child: SingleChildScrollView(
+      child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
