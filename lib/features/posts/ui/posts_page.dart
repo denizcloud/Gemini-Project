@@ -44,7 +44,7 @@ class _PostsPageState extends State<PostsPage> {
           })
         ),
         floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add),
             onPressed: () {
               postsBloc.add(PostsInitialFetchEvent());
               setState(() {
@@ -58,15 +58,14 @@ class _PostsPageState extends State<PostsPage> {
           listener: (context, state) {},
           builder: (context, state) {
             switch (state.runtimeType) {
-              case PostsFetchingLoadingState:
+              case PostsFetchingLoadingState _:
                 return const Center(
                   child: CircularProgressIndicator(),
                 );
-              case PostFetchingSuccessfulState:
+              case PostFetchingSuccessfulState _:
                 final successState = state as PostFetchingSuccessfulState;
 
-                return Container(
-                  child: ListView.builder(
+                return ListView.builder(
                     itemCount: successState.posts.length,
                     itemBuilder: (context, index) {
                       return Container(
@@ -105,14 +104,15 @@ class _PostsPageState extends State<PostsPage> {
                         ),
                       );
                     },
-                  ),
-                );
+                  );
               default:
                 return const SizedBox();
             }
           },
         ),
-        drawer: NavigationDrawer()));
+        drawer: NavigationDrawer()
+      )
+    );
   }
 }
 
