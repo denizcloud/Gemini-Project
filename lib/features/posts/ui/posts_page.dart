@@ -23,7 +23,7 @@ class _PostsPageState extends State<PostsPage> {
     super.initState();
   }
 
-  String title = "Kedicikler";
+  String title = "Genres";
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -84,14 +84,13 @@ class _PostsPageState extends State<PostsPage> {
                                             child: Column(
                                               children: [
                                                 const SizedBox(height:45),
-                                                
                                                 Padding(
                                                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                                                  child: Text(successState.posts[index].title,style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),),
+                                                  child: Text(successState.posts[index].title,style: const TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),),
                                                 ),
                                                 const SizedBox(height: 15),
                                                 Container(decoration: const BoxDecoration(color: Color.fromARGB(255, 148, 14, 14)),height:52,width: 350, child: Text('Tekir',style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),)),
-                                            
+                                                
                                               ],
                                           ),),
                                         ]

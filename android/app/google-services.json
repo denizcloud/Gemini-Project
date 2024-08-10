@@ -8,6 +8,42 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:263670736389:android:98cf5aec09d741a0409e6c",
+        "android_client_info": {
+          "package_name": "com.lib.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "263670736389-id7e6uuk182qi7giuiajjotklf9o66sp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6sRv8zao-hX7M6LMqZ7IHomdaAetrieY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "263670736389-id7e6uuk182qi7giuiajjotklf9o66sp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "263670736389-5s95mugqqriq6dshilhrtnjugdsfj4gk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.scheduleApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:263670736389:android:a8dbeb8f925fe1dd409e6c",
         "android_client_info": {
           "package_name": "com.log.app"
@@ -32,10 +68,10 @@
               "client_type": 3
             },
             {
-              "client_id": "263670736389-eeesvq56jjkauns1eb1jdprfesvo5upt.apps.googleusercontent.com",
+              "client_id": "263670736389-5s95mugqqriq6dshilhrtnjugdsfj4gk.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.log"
+                "bundle_id": "com.example.scheduleApp"
               }
             }
           ]
@@ -68,10 +104,10 @@
               "client_type": 3
             },
             {
-              "client_id": "263670736389-eeesvq56jjkauns1eb1jdprfesvo5upt.apps.googleusercontent.com",
+              "client_id": "263670736389-5s95mugqqriq6dshilhrtnjugdsfj4gk.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.log"
+                "bundle_id": "com.example.scheduleApp"
               }
             }
           ]

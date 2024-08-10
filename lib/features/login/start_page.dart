@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app_empty/features/login/auth_page.dart';
+import 'package:news_app_empty/features/login/sign_up.dart';
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
@@ -12,17 +13,7 @@ class StartPage extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const SizedBox(height: 350),
-          const Text('Welcome',
-          style: TextStyle(
-            fontFamily: 'Georgia',
-            fontSize: 32,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          decoration: TextDecoration.none
-          ),),
-
-          const SizedBox(height: 100),
+          const SizedBox(height: 550),
             GestureDetector(
             onTap: (){
               Navigator.push(context, MaterialPageRoute(
@@ -31,7 +22,7 @@ class StartPage extends StatelessWidget {
             },
             
             child: Container(
-              padding: EdgeInsets.all(25),
+              //padding: EdgeInsets.all(25),
               margin: EdgeInsets.symmetric(horizontal: 25),
               decoration: BoxDecoration(
                 color: Colors.transparent,
@@ -40,7 +31,26 @@ class StartPage extends StatelessWidget {
               child: Center(
                 child: Image(image: AssetImage('lib/assets/sign_in.png')),
               ),
-            ))
+            )),
+            const SizedBox(height: 20),
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => SignUpPage()
+                ));
+              },
+              
+              child: Container(
+                //padding: EdgeInsets.all(25),
+                margin: EdgeInsets.symmetric(horizontal: 25),
+                decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Center(
+                  child: Image(image: AssetImage('lib/assets/sign_up.png')),
+              ),
+            )),
 
 
 
