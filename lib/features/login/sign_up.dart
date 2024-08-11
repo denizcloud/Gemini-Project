@@ -14,6 +14,23 @@ class SignUpPage extends StatelessWidget {
 
   SignUpPage({super.key});
 
+
+  signUp() async {
+    if(passwordConfirmed()){
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(email: usernameController.text.trim(), password: passwordController.text.trim());
+    }
+  }
+
+  bool passwordConfirmed(){
+    if(passwordController.text.trim() == re_passwordController.text.trim()){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,7 +50,11 @@ class SignUpPage extends StatelessWidget {
                 const SizedBox(height: 60),
                 MyField(controller: re_passwordController, hintText: 'Password', obscureText: true),
                 const SizedBox(height: 25),
-                const SignupButton(onTap: null),
+                SignupButton(onTap: (){
+                  signUp();
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> AuthPage()));
+
+                }),
                 const SizedBox(height: 80),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -43,6 +64,8 @@ class SignUpPage extends StatelessWidget {
                 ),
 
                 const SizedBox(height: 100),
+
+
                 Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: InkWell(
