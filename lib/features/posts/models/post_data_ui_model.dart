@@ -9,6 +9,9 @@ class PostDataUiModel {
   Map<String, dynamic> toMap() {
     return {
       'title': title,
+      'genre': 'ez',
+      'summary': 'yok',
+      'article': 'burada yazan hicbirsey aslinda olmadi ez'
     };
   }
 

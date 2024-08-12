@@ -1,5 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app_empty/features/chat/ui/chat_page.dart';
 import 'package:news_app_empty/features/home/home.dart';
 import 'package:news_app_empty/features/login/auth_page.dart';
 import 'package:news_app_empty/features/login/start_page.dart';

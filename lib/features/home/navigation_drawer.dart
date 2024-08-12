@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app_empty/features/chat/ui/chat_page.dart';
 import 'package:news_app_empty/features/home/home.dart';
 import 'package:news_app_empty/features/login/auth_page.dart';
 import 'package:news_app_empty/features/posts/ui/posts_page.dart';
@@ -8,7 +9,9 @@ import 'package:news_app_empty/features/settings/settings_page.dart';
 
 class PageNavigationDrawer extends StatelessWidget {
 
-  const PageNavigationDrawer({super.key});
+
+
+  PageNavigationDrawer({super.key});
 
   @override
   Widget build(BuildContext context) => Drawer(
@@ -27,8 +30,9 @@ class PageNavigationDrawer extends StatelessWidget {
         ),
       );
 
-  Widget buildMenuItems(BuildContext context) =>
-      Wrap(runSpacing: 16, children: [
+
+  Widget buildMenuItems(BuildContext context){
+      return Wrap(runSpacing: 16, children: [
         ListTile(
           leading: const Icon(Icons.home),
           title: const Text('Main'),
@@ -53,7 +57,16 @@ class PageNavigationDrawer extends StatelessWidget {
           onTap: () => Navigator.of(context).pushReplacement(
               MaterialPageRoute(builder: (context) => const SettingsPage())), //need to create a settings page feature
         ),
-        const SizedBox(height: 500),
+        ListTile(
+          leading: const Icon(Icons.chat_bubble),
+          title: const Text('Chat'),
+          onTap: (){
+            FirebaseAuth.instance.signOut();
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const ChatPage()));
+          } //need to create a settings page feature
+        ),
+        const SizedBox(height: 410),
+        const SizedBox(height: 30),
         ListTile(
           leading: const Icon(Icons.logout),
           title: const Text('Logout'),
@@ -63,5 +76,5 @@ class PageNavigationDrawer extends StatelessWidget {
           } //need to create a settings page feature
         ),
         
-      ]);
+      ]);}
 }

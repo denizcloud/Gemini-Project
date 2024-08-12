@@ -60,7 +60,7 @@ class _SavedNewsState extends State<SavedNewsPage>{
           return Container();
         },
       ),
-      drawer: const PageNavigationDrawer(),
+      drawer: PageNavigationDrawer(),
     );
   }
 }

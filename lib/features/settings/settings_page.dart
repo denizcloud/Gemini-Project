@@ -37,7 +37,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   icon: const Icon(Icons.menu));
             }),
           ),
-          drawer: const PageNavigationDrawer(),
+          drawer: PageNavigationDrawer(),
           body: Theme(
             data: Theme.of(context).copyWith(
               highlightColor: Colors.transparent,
