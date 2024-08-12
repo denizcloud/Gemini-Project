@@ -8,6 +8,7 @@ import 'package:news_app_empty/features/posts/ui/posts_page.dart';
 import 'package:news_app_empty/features/saved_news/bloc/saved_news_bloc.dart';
 import 'package:news_app_empty/features/saved_news/sn_UI/sn_tile_widget.dart';
 import 'package:news_app_empty/features/settings/settings_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SavedNewsPage extends StatefulWidget{
   const SavedNewsPage ({super.key});
@@ -23,44 +24,44 @@ class _SavedNewsState extends State<SavedNewsPage>{
     snBloc.add(SNInitialEvent());
     super.initState();
 }
+
+Future<List> getSaved() async {
+  var pref = await SharedPreferences.getInstance();
+  List saved = pref.getStringList('saved') ?? [];
+  return saved;
+}
+
+
 @override
     Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Saved Items'),
-        leading: Builder(builder: (context){
-            return IconButton(
-              onPressed: (){
-                Scaffold.of(context).openDrawer();
-              },
-              icon: const Icon(Icons.menu));
-          }),
+    Future<List> saved = getSaved();
+    return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(image: AssetImage('lib/assets/news_background.png'))
       ),
-      body: BlocConsumer<SavedNewsBloc, SavedNewsState>(
-        bloc: snBloc,
-        listener: (context, state) {
-          
-        },
-        listenWhen: (previous, current) => current is SNActionState,
-        buildWhen: (previous, current) => current is! SNActionState,
-        builder: (context, state) {
-          switch (state.runtimeType) {
-            case SavedSuccessState:
-              final successState = state as SavedSuccessState;
-              return ListView.builder(
-                  itemCount: successState.snItems.length,
-                  itemBuilder: (context, index) {
-                    return NewsTileWidget(
-                        snBloc: snBloc,
-                        newsDataModel: successState.snItems[index]);
-                  });
-
-            default:
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          title: Text('Saved Items'),
+          leading: Builder(builder: (context){
+              return IconButton(
+                onPressed: (){
+                  Scaffold.of(context).openDrawer();
+                },
+                icon: const Icon(Icons.menu));
+            }),
+        ),
+        body: FutureBuilder(future: saved, builder: (context, snapshot) {
+          if(snapshot.hasData){
+            return Column(children: [Text(snapshot.data.toString())],);
+          }else{
+            return const Center(
+               child: CircularProgressIndicator(),
+               );
           }
-          return Container();
-        },
+        },),
+        drawer: PageNavigationDrawer(),
       ),
-      drawer: const PageNavigationDrawer(),
     );
   }
 }

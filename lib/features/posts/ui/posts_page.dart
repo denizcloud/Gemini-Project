@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app_empty/features/home/home.dart';
 import 'package:news_app_empty/features/home/navigation_drawer.dart';
+import 'package:news_app_empty/features/news/bloc/ui/news_page.dart';
 import 'package:news_app_empty/features/posts/bloc/posts_bloc.dart';
 import 'package:news_app_empty/features/saved_news/sn_UI/saved_news_page.dart';
 import 'package:news_app_empty/features/settings/settings_page.dart';
@@ -23,7 +24,11 @@ class _PostsPageState extends State<PostsPage> {
     super.initState();
   }
 
-  String title = "Kedicikler";
+  openNews(Map news, context){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> NewsPage(news: news)));
+  }
+
+  String title = "Genres";
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,14 +48,6 @@ class _PostsPageState extends State<PostsPage> {
                     }, icon: const Icon(Icons.menu));
                   })
                 ),
-                floatingActionButton: FloatingActionButton(
-                    child: const Icon(Icons.add),
-                    onPressed: () {
-                      postsBloc.add(PostsInitialFetchEvent());
-                      setState(() {
-
-                      });
-                    }),
                 body: Column(
                   children: [
                     const Padding(
@@ -76,6 +73,10 @@ class _PostsPageState extends State<PostsPage> {
                                   itemCount: successState.posts.length,
                                   itemBuilder: (context, index) {
                                     return Container(
+                                      child:GestureDetector(
+                                      onTap: (){
+                                        openNews(successState.posts[index].toMap(), context);
+                                      },
                                       child: Stack(
                                         children: [
                                           Image.asset('lib/assets/news_paper.png'), 
@@ -84,18 +85,17 @@ class _PostsPageState extends State<PostsPage> {
                                             child: Column(
                                               children: [
                                                 const SizedBox(height:45),
-                                                
                                                 Padding(
                                                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                                                  child: Text(successState.posts[index].title,style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),),
+                                                  child: Text(successState.posts[index].title,style: const TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),),
                                                 ),
                                                 const SizedBox(height: 15),
-                                                Container(decoration: const BoxDecoration(color: Color.fromARGB(255, 148, 14, 14)),height:52,width: 350, child: Text('Tekir',style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),)),
-                                            
+                                                Container(decoration: const BoxDecoration(color: Color.fromARGB(255, 161, 47, 47)),height:42,width: 340, child: Text(successState.posts[index].genre,style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),)),
+                                                
                                               ],
                                           ),),
                                         ]
-                                      ),
+                                      ),)
                                     );
                                   },
                                 );
@@ -106,7 +106,7 @@ class _PostsPageState extends State<PostsPage> {
                     )
                   )]
                 ),
-                drawer: const PageNavigationDrawer()
+                drawer: PageNavigationDrawer()
               )
     );
   }

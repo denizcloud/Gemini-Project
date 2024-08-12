@@ -1,5 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gemini/flutter_gemini.dart';
+import 'package:news_app_empty/features/chat/ui/chat_page.dart';
 import 'package:news_app_empty/features/home/home.dart';
 import 'package:news_app_empty/features/login/auth_page.dart';
 import 'package:news_app_empty/features/login/start_page.dart';
@@ -13,6 +15,7 @@ void main() async{
   await Firebase.initializeApp(
   options: DefaultFirebaseOptions.currentPlatform,
   );
+  Gemini.init(apiKey: 'AIzaSyCP1zqfDhDSxM8LH84xtzFvwTlzfl_LThs');
   runApp(DevicePreview(
     enabled: true,
     builder: (context)=> (const MainApp())));

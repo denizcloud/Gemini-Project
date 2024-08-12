@@ -11,20 +11,22 @@ class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  
-    InkWell(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.all(25),
-        margin: const EdgeInsets.symmetric(horizontal: 25),
-        decoration: BoxDecoration(
-          color: Color.fromARGB(255, 31, 31, 31),
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: const Center(child: Text('Sign In',
-        style: TextStyle(color: Colors.white,
-        fontWeight: FontWeight.bold,
-        fontFamily: 'Georgia',
-        fontSize: 16),),),
-      ));
+    Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25),
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          decoration: BoxDecoration(
+            color: Color.fromARGB(255, 31, 31, 31),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: const Center(child: Text('Sign In',
+          style: TextStyle(color: Color.fromARGB(255, 226, 226, 226),
+          fontWeight: FontWeight.bold,
+          fontFamily: 'Georgia',
+          fontSize: 16),),),
+          height: 50,
+        )),
+    );
   }
 }
