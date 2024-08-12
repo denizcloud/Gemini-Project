@@ -10,6 +10,7 @@ import 'package:news_app_empty/features/posts/ui/posts_page.dart';
 import 'package:news_app_empty/features/saved_news/sn_UI/saved_news_page.dart';
 import 'package:news_app_empty/features/settings/settings_page.dart';
 import 'package:news_app_empty/features/home/navigation_drawer.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Home extends StatefulWidget {
   const Home({
@@ -47,6 +48,17 @@ class _HomeState extends State<Home> {
     ),
   ];
 
+  saveNews(int newsId) async {
+    final prefs = await SharedPreferences.getInstance();
+    List<String>? saved = prefs.getStringList('saved') ?? [];
+    String newd = newsId.toString();
+    if(saved!.contains(newd)){
+      saved.remove(newd);
+    }else{
+      saved.add(newd);
+    }
+    await prefs.setStringList('saved', saved);
+  }
 
   openNews(Map news, context){
     Navigator.push(context, MaterialPageRoute(builder: (context)=> NewsPage(news: news)));
@@ -73,10 +85,22 @@ class _HomeState extends State<Home> {
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Text(news['title'],style: const TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),),
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Container(decoration: const BoxDecoration(color: Color.fromARGB(255, 148, 14, 14)),height:52,width: 350, child: Text(news['genre'],style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),)),
+                child: Container(decoration: const BoxDecoration(color: Color.fromARGB(255, 161, 47, 47)),height:42,width: 340, 
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(news['genre'],style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),),
+                      IconButton(onPressed: (){
+                        saveNews(news['id']);
+                      }, icon: Icon(Icons.bookmark)),
+                    ],
+                  ),
+                )),
               ),
               const SizedBox(height: 5),
               Padding(

@@ -93,52 +93,56 @@ class _ChatPageState extends State<ChatPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Chat"),
-        leading: Builder(builder: (context){
-          return IconButton(onPressed: (){
-            Scaffold.of(context).openDrawer();
-          }, icon: const Icon(Icons.menu));
-        })
-      ),
-      drawer: PageNavigationDrawer(),
-      body: Column(
-        children: [
-            SizedBox(
-            height: 620,
-            width: 400,
-            child: build_conv()),
-          const SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Row(
-              children: [
-                Container(
-                  height: 60,
-                  width: 320,
-                  decoration: BoxDecoration(color:  const Color.fromARGB(255, 225, 225, 225),
-                  borderRadius: BorderRadius.circular(25)),
-                  clipBehavior: Clip.antiAlias,
-                  child:
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                      child: Center(
-                        child: TextField(controller: controller,
-                        cursorColor: Colors.transparent,
-                        style: const TextStyle(color:  Color.fromARGB(255, 31,31,31),
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Georgia',),),
+    return Container(
+      decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('lib/assets/news_background.png'))),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          title: const Text("Chat"),
+          leading: Builder(builder: (context){
+            return IconButton(onPressed: (){
+              Scaffold.of(context).openDrawer();
+            }, icon: const Icon(Icons.menu));
+          })
+        ),
+        drawer: PageNavigationDrawer(),
+        body: Column(
+          children: [
+              SizedBox(
+              height: 620,
+              width: 400,
+              child: build_conv()),
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Row(
+                children: [
+                  Container(
+                    height: 60,
+                    width: 320,
+                    decoration: BoxDecoration(color:  const Color.fromARGB(255, 225, 225, 225),
+                    borderRadius: BorderRadius.circular(25)),
+                    clipBehavior: Clip.antiAlias,
+                    child:
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                        child: Center(
+                          child: TextField(controller: controller,
+                          cursorColor: Colors.transparent,
+                          style: const TextStyle(color:  Color.fromARGB(255, 31,31,31),
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Georgia',),),
+                        ),
                       ),
-                    ),
-                ),
-                 IconButton(onPressed: (){
-                  sendText();
-                 }, icon: const Icon(Icons.send))
-              ],
+                  ),
+                   IconButton(onPressed: (){
+                    sendText();
+                   }, icon: const Icon(Icons.send))
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -52,18 +52,17 @@ class PageNavigationDrawer extends StatelessWidget {
               MaterialPageRoute(builder: (context) => const SavedNewsPage())), //need to create the saved news page in sn_UI.dart
         ),
         ListTile(
+          leading: const Icon(Icons.chat_bubble),
+          title: const Text('Chat'),
+          onTap: (){
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const ChatPage()));
+          } //need to create a settings page feature
+        ),
+        ListTile(
           leading: const Icon(Icons.settings),
           title: const Text('Settings'),
           onTap: () => Navigator.of(context).pushReplacement(
               MaterialPageRoute(builder: (context) => const SettingsPage())), //need to create a settings page feature
-        ),
-        ListTile(
-          leading: const Icon(Icons.chat_bubble),
-          title: const Text('Chat'),
-          onTap: (){
-            FirebaseAuth.instance.signOut();
-            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const ChatPage()));
-          } //need to create a settings page feature
         ),
         const SizedBox(height: 410),
         const SizedBox(height: 30),

@@ -71,4 +71,4 @@ def gemini_summarizer(newsID, english_level, bullet_point = False):
 
 
 if __name__ == '__main__':
-    gemini_summarizer("1", "C2")
+    gemini_summarizer("2", "C2")

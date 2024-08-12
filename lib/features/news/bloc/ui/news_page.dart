@@ -29,7 +29,7 @@ class NewsPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Text(news['title'],
-              style: const TextStyle(fontFamily: 'Georgia', color: Color.fromARGB(255, 31, 31, 31), fontWeight: FontWeight.bold, fontSize: 30)),
+              style: const TextStyle(fontFamily: 'Georgia', color: Color.fromARGB(255, 31, 31, 31), fontWeight: FontWeight.bold, fontSize: 15)),
             ),
             const SizedBox(height: 15),
             Row(

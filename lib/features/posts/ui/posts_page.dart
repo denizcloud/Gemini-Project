@@ -48,14 +48,6 @@ class _PostsPageState extends State<PostsPage> {
                     }, icon: const Icon(Icons.menu));
                   })
                 ),
-                floatingActionButton: FloatingActionButton(
-                    child: const Icon(Icons.add),
-                    onPressed: () {
-                      postsBloc.add(PostsInitialFetchEvent());
-                      setState(() {
-
-                      });
-                    }),
                 body: Column(
                   children: [
                     const Padding(
@@ -98,7 +90,7 @@ class _PostsPageState extends State<PostsPage> {
                                                   child: Text(successState.posts[index].title,style: const TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),),
                                                 ),
                                                 const SizedBox(height: 15),
-                                                Container(decoration: const BoxDecoration(color: Color.fromARGB(255, 161, 47, 47)),height:52,width: 350, child: Text('Tekir',style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),)),
+                                                Container(decoration: const BoxDecoration(color: Color.fromARGB(255, 161, 47, 47)),height:42,width: 340, child: Text(successState.posts[index].genre,style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),)),
                                                 
                                               ],
                                           ),),
