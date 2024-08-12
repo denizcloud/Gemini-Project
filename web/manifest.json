@@ -1,11 +1,11 @@
 {
-    "name": "news_app_empty",
-    "short_name": "news_app_empty",
+    "name": "GEMINEWS",
+    "short_name": "GEMINEWS",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Streamlined news tailored to you, powered by Gemini.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
