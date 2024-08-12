@@ -57,8 +57,14 @@ class NewsPage extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: Text(news['article'],
-                  style: const TextStyle(fontFamily: 'Georgia', color: Color.fromARGB(255, 31, 31, 31), fontWeight: FontWeight.bold, fontSize: 15)),
+                  child: SizedBox(
+                    height: 500,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.vertical,
+                      child: Text(news['article'],
+                      style: const TextStyle(fontFamily: 'Georgia', color: Color.fromARGB(255, 31, 31, 31), fontWeight: FontWeight.bold, fontSize: 15)),
+                    ),
+                  ),
                 ),
               ],
             ),

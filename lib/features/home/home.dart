@@ -56,6 +56,7 @@ class _HomeState extends State<Home> {
     return Container(
       child:GestureDetector(
             onTap: (){
+              
               openNews(news, context);
             },
       child: Stack(
