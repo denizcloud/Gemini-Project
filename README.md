@@ -1,16 +1,26 @@
-# news_app_empty
+# News App
 
-A new Flutter project.
+This is a Flutter project aimed at delivering the latest news in a mobile application format. The app is designed to be simple, user-friendly, and efficient in providing users with the most recent news articles and stories from various sources.
+
+## Features
+
+- **Browse News**: Users can browse through a list of the latest news articles.
+- **Article Details**: Clicking on an article opens a detailed view where users can read the full story.
+- **Favorites**: Users can mark articles as favorites for easy access later.
+- **Search**: A search feature allows users to find articles that match specific criteria.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To get started with this project, ensure you have Flutter installed on your machine. For help setting up Flutter, refer to the [Flutter online documentation](https://docs.flutter.dev/).
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter SDK
+- Visual Studio Code with Flutter and Dart plugins installed
+- An emulator or physical device to run the app
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/denizcloud/Gemini-Project
