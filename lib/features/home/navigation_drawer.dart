@@ -40,12 +40,6 @@ class PageNavigationDrawer extends StatelessWidget {
               MaterialPageRoute(builder: (context) => const Home())),
         ),
         ListTile(
-          leading: const Icon(Icons.deck),
-          title: const Text('Genre'),
-          onTap: () => Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => const PostsPage())),
-        ),
-        ListTile(
           leading: const Icon(Icons.bookmark),
           title: const Text('Saved'),
           onTap: () => Navigator.of(context).pushReplacement(
@@ -64,7 +58,7 @@ class PageNavigationDrawer extends StatelessWidget {
           onTap: () => Navigator.of(context).pushReplacement(
               MaterialPageRoute(builder: (context) => const SettingsPage())), //need to create a settings page feature
         ),
-        const SizedBox(height: 410),
+        const SizedBox(height: 440),
         const SizedBox(height: 30),
         ListTile(
           leading: const Icon(Icons.logout),
