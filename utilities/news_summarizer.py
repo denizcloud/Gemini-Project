@@ -57,7 +57,7 @@ def gemini_summarizer(newsID, english_level, bullet_point = False):
         response = model.generate_content([news_article, "Can you summarize this article as a bulleted list and also give key points?"])
 
     elif not bullet_point:
-        prompt = f"Can you summarize this article with {str(english_level)} level english in 50 words or less?"
+        prompt = f"Can you summarize this article with {str(english_level)} level english in 30 words or less?"
         response = model.generate_content([news_article, prompt])
     try:
         # Reference to the specific location in the Realtime Database

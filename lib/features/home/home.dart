@@ -83,7 +83,7 @@ class _HomeState extends State<Home> {
               const SizedBox(height:45),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Text(news['title'],style: const TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),),
+                child: Text(news['title'],style: const TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),),
               ),
               const SizedBox(height: 10),
               Padding(
